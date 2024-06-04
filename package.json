@@ -1,0 +1,20 @@
+{
+    "name": "nprr-portal",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server.js",
+    "scripts": {
+        "start-submit": "node server-submit.js",
+        "start-view": "node server-view.js"
+    },
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "ejs": "^3.1.6",
+        "multer": "^1.4.2",
+        "sqlite3": "^5.0.2"
+    },
+    "author": "",
+    "license": "ISC"
+}

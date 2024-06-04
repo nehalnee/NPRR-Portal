@@ -1,0 +1,97 @@
+/* General styling for submit portal */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+}
+
+/* Header styling */
+header {
+    background: #50b3a2;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* Form styling */
+form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+form input[type="text"], form input[type="number"], form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    display: inline-block;
+    background: #50b3a2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background: #45a089;
+}
+
+/* Language switch styling */
+#language-switch {
+    float: right;
+    margin-top: 10px;
+}
+
+#language-switch button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0 10px;
+    color: #50b3a2;
+}
+
+#language-switch button:hover {
+    color: #e8491d;
+}
+
+/* Responsive design */
+@media(max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    #language-switch {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
