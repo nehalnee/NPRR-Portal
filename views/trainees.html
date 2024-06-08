@@ -7,26 +7,87 @@
     <link rel="stylesheet" href="/styles-view.css">
 </head>
 <body>
+    <div class="language-selector">
+        <button id="en" class="lang-btn">English</button>
+        <button id="ar" class="lang-btn">Arabic</button>
+    </div>
+    <header>
+        <h1 data-lang="traineesTitle">Trainees Database</h1>
+    </header>
     <div class="container">
-        <h1>Trainees Database</h1>
-        <table>
+        <table id="traineesTable">
             <thead>
                 <tr>
-                    <th>Full Name</th>
-                    <th>Age</th>
-                    <th>Gender</th>
-                    <th>Place of Birth</th>
-                    <th>Affiliation Number</th>
-                    <th>Contact Number</th>
-                    <th>Card Picture</th>
-                    <th>Actions</th>
+                    <th data-lang="fullNameHeader">Full Name</th>
+                    <th data-lang="ageHeader">Age</th>
+                    <th data-lang="genderHeader">Gender</th>
+                    <th data-lang="placeOfBirthHeader">Place of Birth</th>
+                    <th data-lang="affiliationNumberHeader">Affiliation Number</th>
+                    <th data-lang="contactNumberHeader">Contact Number</th>
+                    <th data-lang="cardPicHeader">Card Picture</th>
+                    <th data-lang="actionsHeader">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Data will be populated here -->
+                <!-- Data will be populated here by the script -->
             </tbody>
         </table>
     </div>
-    <script src="/script.js"></script>
+
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h2 data-lang="editTraineeTitle">Edit Trainee</h2>
+            <form id="editTraineeForm">
+                <input type="hidden" id="editTraineeId" name="id">
+                <label for="editFullName" data-lang="fullNameLabel">Full Name</label>
+                <input type="text" id="editFullName" name="fullName" required>
+                <label for="editAge" data-lang="ageLabel">Age</label>
+                <input type="number" id="editAge" name="age" required>
+                <label for="editGender" data-lang="genderLabel">Gender</label>
+                <select id="editGender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label for="editPlaceOfBirth" data-lang="placeOfBirthLabel">Place of Birth</label>
+                <input type="text" id="editPlaceOfBirth" name="placeOfBirth" required>
+                <label for="editAffiliationNumber" data-lang="affiliationNumberLabel">Affiliation Number</label>
+                <input type="text" id="editAffiliationNumber" name="affiliationNumber" required>
+                <label for="editNumber" data-lang="contactNumberLabel">Contact Number</label>
+                <input type="text" id="editNumber" name="number" required>
+                <button type="submit" class="action-btn" data-lang="saveChangesButton">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteSuccessModal" class="success-modal">
+        <div class="success-modal-content">
+            <h2 data-lang="deleteSuccessMessage">Deleted Successfully</h2>
+        </div>
+    </div>
+
+    <div id="editSuccessModal" class="success-modal">
+        <div class="success-modal-content">
+            <h2 data-lang="editSuccessMessage">Modified Successfully</h2>
+        </div>
+    </div>
+
+    <div id="errorModal" class="error-modal">
+        <div class="error-modal-content">
+            <h2 data-lang="errorMessage">Error occurred</h2>
+        </div>
+    </div>
+
+    <div id="confirmDeleteModal" class="confirm-modal">
+        <div class="confirm-modal-content">
+            <span class="close" onclick="closeConfirmDeleteModal()">&times;</span>
+            <h2 data-lang="confirmDeleteMessage">Are you sure you want to delete this trainee?</h2>
+            <button id="confirmDeleteButton" class="action-btn" onclick="confirmDelete()">Yes</button>
+            <button class="action-btn" onclick="closeConfirmDeleteModal()">No</button>
+        </div>
+    </div>
+
+    <script src="/scripts-translate.js"></script>
+    <script src="/scripts-view.js"></script>
 </body>
 </html>
